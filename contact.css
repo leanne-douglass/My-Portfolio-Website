@@ -1,0 +1,210 @@
+/* ------------------------------
+   BASIC PAGE STYLING
+   ------------------------------ */
+
+/* This resets margins and padding so all browsers start clean */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* This sets a nice clean font and background colour for the page */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: #f9f9f9; /* light grey background */
+  color: #0d0d0d; /* dark grey text */
+  line-height: 1.6; /* improves readability */
+  padding: 20px;
+}
+
+/* Center the main content and limit width so it doesn’t stretch too wide */
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff; /* white background for the form area */
+  padding: 30px;
+  border-radius: 10px; /* soft rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* subtle shadow for depth */
+}
+
+/* ------------------------------
+   HEADING STYLES
+   ------------------------------ */
+h1 {
+  text-align: center;
+  color: #f8e2eb;
+  margin-bottom: 10px;
+}
+
+p.intro-text {
+  text-align: center;
+  color: #0d0d0d;
+  margin-bottom: 30px;
+}
+
+nav {
+  background-color: #111; /* Matches footer and button color */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem; 
+  position:relative;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo or site title (left side of navbar) */
+nav .logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #f6f3ef;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Navigation links container */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem; 
+  margin: 0;
+  padding: 0;
+}
+
+/* Individual navigation links */
+nav ul li a {
+  color: #f6f3ef; /* Light beige text to contrast with black */
+  text-decoration: none;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 3px;
+}
+
+/* Hover and active states */
+nav ul li a:hover,
+nav ul li a.active {
+  color: #cbb894; /* Soft gold accent when hovered */
+
+}
+
+/* ------------------------------
+   FORM STYLING
+   ------------------------------ */
+form {
+  display: flex;
+  flex-direction: column; /* stack all items vertically */
+}
+
+/* Labels for each input */
+label {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #444;
+}
+
+/* All text boxes, select menus, and textarea boxes */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  width: 100%; /* make all inputs full width */
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc; /* light grey border */
+  border-radius: 5px; /* slightly rounded corners */
+  font-size: 1rem;
+}
+
+/* The textarea (bigger box for project description) */
+textarea {
+  resize: vertical; /* allow user to resize vertically only */
+  min-height: 100px;
+}
+
+a {
+  color: #cbb894;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #f6f3ef;
+  text-decoration: underline;
+}
+
+/* ------------------------------
+   BUTTON STYLING
+   ------------------------------ */
+button {
+  display: block;
+  margin: 20px auto 0;
+  margin-bottom: 20px;
+  padding: 12px 20px;
+  background-color: #222;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #555;
+}
+.btn {
+  display: block;
+  margin: 20px auto 0;
+  margin-bottom: 20px;
+  padding: 12px 20px;
+  background-color: #222;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #555;
+}
+footer {
+  background-color: #111; /* Black background */
+  color: #f6f3ef; /* Light text */
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+/* 
+   RESPONSIVE DESIGN (MOBILE)
+    */
+@media (max-width: 600px) {
+   .navbar ul {
+    flex-direction: column;   
+    align-items: center;     
+    gap: 1rem;                
+  }
+
+  .navbar {
+    padding: 1rem 0;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+  }
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
