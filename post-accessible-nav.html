@@ -1,0 +1,66 @@
+﻿<!-- BLOG POST: Accessible Mobile Navigation in ~60 lines -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accessible Mobile Navigation in ~60 lines | Leanne Douglass</title>
+    <meta name="description" content="Accessible Mobile Navigation in ~60 lines — by Leanne Douglass." />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="page-post">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav class="site-nav" aria-label="Primary">
+      <div class="nav-container">
+        <a href="index.html" class="brand" aria-label="Home">
+          <span class="brand-mark">LD</span>
+          <span class="brand-name">Leanne Douglass</span>
+          <span class="brand-tagline">Front-End Developer</span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-menu">Menu</button>
+        <ul id="site-menu" class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="blog.html" aria-current="page">Blog</a></li>
+          <li><a href="aboutme.html">About</a></li>
+          <li><a class="nav-cta" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main id="main" class="container article">
+      <header class="post-header">
+        <h1>Accessible Mobile Navigation in ~60 lines</h1>
+        <ul class="post-meta">
+          <li><time datetime="2025-10-02">02 Oct 2025</time></li>
+          <li><span class="dot">•</span> <span data-reading>—</span></li>
+          <li class="tags"><a class="chip" href="blog.html#accessibility">accessibility</a><a class="chip" href="blog.html#ui">ui</a><a class="chip" href="blog.html#javascript">javascript</a></li>
+        </ul>
+      </header>
+
+      <article>
+        
+    <p>This pattern handles keyboard trap, ESC/outside click to close, and ARIA wiring without libraries.</p>
+    <ol>
+      <li>Attach <code>aria-controls</code>, track <code>aria-expanded</code>.</li>
+      <li>Trap focus inside the menu when open; restore to invoker on close.</li>
+      <li>Close on <kbd>Esc</kbd>, outside click, or link activation.</li>
+    </ol>
+    <pre><code>// See site.js: 1) Accessible Mobile Nav</code></pre>
+    
+      </article>
+
+      <nav class="article-nav">
+        <a class="btn" href="blog.html">← Back to Blog</a>
+      </nav>
+    </main>
+
+    <footer role="contentinfo">
+      <p>&copy; 2025 Leanne Douglass | Designed &amp; Built by Me</p>
+      <p><a href="mailto:250363056@aston.ac.uk" class="email-btn" aria-label="Email Leanne">250363056@aston.ac.uk</a></p>
+    </footer>
+    <script src="site.js"></script>
+  </body>
+</html>

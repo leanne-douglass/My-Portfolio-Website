@@ -1,4 +1,4 @@
-
+// File: /assets/js/site.js
 
 /* ===================== Global Utilities ===================== */
 const $ = (sel, ctx = document) => ctx.querySelector(sel);
@@ -390,6 +390,7 @@ function confettiBurst() {
 performance.mark('ld-interactive');
 console.info('%cLD Portfolio ready', 'font-weight:bold', { ms: performance.now().toFixed(1) });
 
+
 /* ===================== 13) Animated Counters ===================== */
 (() => {
   const counters = $$('[data-countto]');
@@ -416,4 +417,59 @@ console.info('%cLD Portfolio ready', 'font-weight:bold', { ms: performance.now()
     });
   }, {threshold:.4});
   counters.forEach(el => io.observe(el));
+})();
+
+
+/* ===================== 14) Blog: search + tag filter ===================== */
+(() => {
+  const posts = Array.from(document.querySelectorAll('.posts .post-card'));
+  const ctrls = document.querySelector('.blog-controls');
+  if (!ctrls || !posts.length) return;
+
+  const input = ctrls.querySelector('#blog-q');
+  const set = (tag, q='') => {
+    const query = q.trim().toLowerCase();
+    posts.forEach((p) => {
+      const text = p.textContent.toLowerCase();
+      const okTag = tag === 'all' || (p.dataset.tag || '').split(',').includes(tag);
+      const okQ = !query || text.includes(query);
+      p.hidden = !(okTag && okQ);
+    });
+  };
+
+  ctrls.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-tag]');
+    if (!btn) return;
+    ctrls.querySelectorAll('button').forEach(b => b.classList.remove('is-active'));
+    btn.classList.add('is-active');
+    set(btn.dataset.tag, input?.value || '');
+    if (btn.dataset.tag !== 'all') location.hash = btn.dataset.tag;
+  });
+
+  input?.addEventListener('input', () => {
+    const active = ctrls.querySelector('button.is-active')?.dataset.tag || 'all';
+    set(active, input.value);
+  });
+
+  // Hash deep-link
+  const tag = location.hash.replace('#', '');
+  if (tag) {
+    const btn = ctrls.querySelector(`button[data-tag="${tag}"]`);
+    if (btn) { btn.click(); }
+  }
+})();
+
+/* ===================== 15) Reading time estimate ===================== */
+(() => {
+  const targets = document.querySelectorAll('[data-reading]');
+  if (!targets.length) return;
+  const WPM = 200;
+  targets.forEach(el => {
+    // On a post page, use the article text; on list, use linked article snippet + fallback
+    let scope = el.closest('.page-post') ? document.querySelector('main.article article') : el.closest('.post-card');
+    const text = scope ? scope.textContent.trim() : '';
+    const words = text ? text.split(/\s+/).length : 0;
+    const mins = Math.max(1, Math.round(words / WPM));
+    el.textContent = `${mins} min read`;
+  });
 })();

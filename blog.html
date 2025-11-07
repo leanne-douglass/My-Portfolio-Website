@@ -1,0 +1,105 @@
+﻿<!-- BLOG PAGE -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | Leanne Douglass</title>
+    <meta name="description" content="Articles on accessibility, performance, and front-end craft." />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="page-blog">
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <div class="nav-container">
+        <a href="index.html" class="brand" aria-label="Home">
+          <span class="brand-mark">LD</span>
+          <span class="brand-name">Leanne Douglass</span>
+          <span class="brand-tagline">Front-End Developer</span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-menu">Menu</button>
+        <ul id="site-menu" class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="blog.html" aria-current="page">Blog</a></li>
+          <li><a href="aboutme.html">About</a></li>
+          <li><a class="nav-cta" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="container">
+      <h1>Blog</h1>
+      <p class="intro-text">Short, practical notes on building accessible, fast, and delightful UI.</p>
+    </header>
+
+    <main id="main" class="container">
+      <div class="blog-controls">
+        <input id="blog-q" placeholder="Search articles…" aria-label="Search posts" />
+        <div class="tags">
+          <button data-tag="all" class="is-active">All</button>
+          <button data-tag="accessibility">Accessibility</button>
+          <button data-tag="performance">Performance</button>
+          <button data-tag="ui">UI</button>
+          <button data-tag="javascript">JavaScript</button>
+        </div>
+      </div>
+
+      <section class="posts">
+        <article class="post-card" data-tag="accessibility,ui,javascript">
+          <a class="cover" href="post-accessible-nav.html" aria-label="Read Accessible Mobile Navigation in ~60 lines">
+            <img src="portfolio.png" alt="Mobile navigation focus outline example" />
+          </a>
+          <div class="post-body">
+            <h2><a href="post-accessible-nav.html">Accessible Mobile Navigation in ~60 lines</a></h2>
+            <p class="excerpt">Focus management, trap, ESC/outside close, and ARIA—cleanly handled without libraries.</p>
+            <ul class="post-meta">
+              <li><time datetime="2025-10-02">02 Oct 2025</time></li>
+              <li><span class="dot">•</span> <span data-reading>—</span></li>
+              <li><span class="chip">accessibility</span><span class="chip">ui</span><span class="chip">javascript</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="post-card" data-tag="performance,ui">
+          <a class="cover" href="post-performance-receipts.html" aria-label="Read Performance Receipts for Portfolios">
+            <img src="portfolio.png" alt="Lighthouse results illustration" />
+          </a>
+          <div class="post-body">
+            <h2><a href="post-performance-receipts.html">Performance Receipts for Portfolios</a></h2>
+            <p class="excerpt">How to present Lighthouse, Core Web Vitals, and bundle stats credibly in your site.</p>
+            <ul class="post-meta">
+              <li><time datetime="2025-10-12">12 Oct 2025</time></li>
+              <li><span class="dot">•</span> <span data-reading>—</span></li>
+              <li><span class="chip">performance</span><span class="chip">ui</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="post-card" data-tag="ui,javascript">
+          <a class="cover" href="post-io-reveals.html" aria-label="Read Polished Scroll Reveals with IntersectionObserver">
+            <img src="portfolio.png" alt="IntersectionObserver reveal animation" />
+          </a>
+          <div class="post-body">
+            <h2><a href="post-io-reveals.html">Polished Scroll Reveals with IntersectionObserver</a></h2>
+            <p class="excerpt">Tasteful motion that respects reduced-motion and stays under budget.</p>
+            <ul class="post-meta">
+              <li><time datetime="2025-10-22">22 Oct 2025</time></li>
+              <li><span class="dot">•</span> <span data-reading>—</span></li>
+              <li><span class="chip">ui</span><span class="chip">javascript</span></li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <p>&copy; 2025 Leanne Douglass | Designed &amp; Built by Me</p>
+      <p><a href="mailto:250363056@aston.ac.uk" class="email-btn" aria-label="Email Leanne">250363056@aston.ac.uk</a></p>
+    </footer>
+    <script src="site.js"></script>
+  </body>
+</html>
