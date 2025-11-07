@@ -1,23 +1,22 @@
-﻿<!-- CONTACT PAGE STYLING
-With Link to CSS file  -->
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Leanne Douglass</title> <meta name="theme-color" content="#0f172a">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon.svg"> <link rel="mask-icon" href="favicon.svg" color="#cbb894">
-    <meta name="description" content="Contact Leanne Douglass to discuss front-end development projects, accessibility, or collaborations.">
-    <meta name="keywords" content="contact, email, Leanne Douglass, front-end developer">
-    <meta property="og:title" content="Contact | Leanne Douglass">
-    <meta property="og:description" content="Get in touch to discuss a project.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="portfolio.png">
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Leanne Douglass</title>
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.svg" />
+    <link rel="mask-icon" href="favicon.svg" color="#cbb894" />
+    <meta name="description" content="Contact Leanne Douglass to discuss front-end development projects or collaborations." />
+    <meta property="og:title" content="Contact | Leanne Douglass" />
+    <meta property="og:description" content="Get in touch to discuss a project." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="portfolio.png" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
   </head>
   <body class="page-contact">
     <a class="skip-link" href="#main">Skip to main content</a>
@@ -26,75 +25,65 @@ With Link to CSS file  -->
         <a href="index.html" class="brand" aria-label="Home">
           <span class="brand-mark">LD</span>
           <span class="brand-name">Leanne Douglass</span>
-          <span class="brand-tagline">Front‑End Developer</span>
+          <span class="brand-tagline">Front-End Developer</span>
         </a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="site-menu">Menu</button>
         <ul id="site-menu" class="nav-links">
-          <li>
-            <a href="index.html">Home</a>
-          </li>
-          <li>
-            <a href="projects.html">Projects</a>
-          </li>
-          <li>
-            <a href="aboutme.html">About</a>
-          </li>
-          <li>
-            <a class="nav-cta" href="contact.html" aria-current="page">Contact</a>
-          </li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="aboutme.html">About</a></li>
+          <li><a class="nav-cta" href="contact.html" aria-current="page">Contact</a></li>
         </ul>
       </div>
     </nav>
-    <!-- HEADER SECTION -->
-    <!-- Introduces the page and gives it a title -->
+
     <header>
       <h1>Contact Me</h1>
       <h2>Let's Build Something Great Together</h2>
     </header>
-    <!-- CONTACT SECTION -->
-    <!-- This is the form and instructions for the user -->
+
     <main id="main">
       <section class="contact">
         <h3>Project Enquiry Form</h3>
         <p>Please fill out the form below and I will aim to get back to you as soon as possible.</p>
-        <!-- The main form begins here -->
-        <!-- "onsubmit" calls an inline JavaScript function to check that the form is valid before sending -->
         <form onsubmit="return validateAndConfirm(event)">
           <label for="name">Full Name:</label>
-          <input type="text" id="name" required>
+          <input type="text" id="name" required />
+
           <label for="description">Brief Project Description:</label>
-          <input type="text" id="description" required>
+          <input type="text" id="description" required />
+
           <label for="email">Email:</label>
-          <input type="email" id="email" required>
+          <input type="email" id="email" required />
+
           <label for="confirmEmail">Confirm Email:</label>
-          <input type="email" id="confirmEmail" required>
+          <input type="email" id="confirmEmail" required />
+
           <label for="phone">Phone Number:</label>
-          <input type="tel" id="phone">
+          <input type="tel" id="phone" />
+
           <label for="contactMethod">Preferred Contact Method:</label>
           <select id="contactMethod">
             <option value="Email">Email</option>
             <option value="Phone">Phone</option>
           </select>
+
           <label for="dateRequired">Project Date Required By:</label>
-          <input type="date" id="dateRequired" required>
+          <input type="date" id="dateRequired" required />
+
           <label for="requirements">Additional Requirements:</label>
-          <textarea id="requirements" rows="4">
-          </textarea>
+          <textarea id="requirements" rows="4"></textarea>
+
           <button type="submit">Submit</button>
           <a href="index.html" class="btn">Return to Main Page</a>
         </form>
       </section>
     </main>
-    <!-- FOOTER SECTION -->
-    <!-- Same footer message at the bottom as the main page-->
+
     <footer role="contentinfo">
       <p>&copy; 2025 Leanne Douglass | Designed &amp; Built by Me</p>
-      <p>
-        <a href="mailto:250363056@aston.ac.uk" class="email-btn" aria-label="Email Leanne">250363056@aston.ac.uk</a>
-      </p>
+      <p><a href="mailto:250363056@aston.ac.uk" class="email-btn" aria-label="Email Leanne">250363056@aston.ac.uk</a></p>
     </footer>
-    <!-- JAVASCRIPT -->
-    <script src="site.js">
-    </script>
+    <script src="site.js"></script>
   </body>
 </html>

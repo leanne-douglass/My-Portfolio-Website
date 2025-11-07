@@ -1,4 +1,4 @@
-// File: /assets/js/site.js
+
 
 /* ===================== Global Utilities ===================== */
 const $ = (sel, ctx = document) => ctx.querySelector(sel);
@@ -389,3 +389,31 @@ function confettiBurst() {
 /* ===================== 12) Small perf mark ===================== */
 performance.mark('ld-interactive');
 console.info('%cLD Portfolio ready', 'font-weight:bold', { ms: performance.now().toFixed(1) });
+
+/* ===================== 13) Animated Counters ===================== */
+(() => {
+  const counters = $$('[data-countto]');
+  if (!counters.length || !('IntersectionObserver' in window)) return;
+  const step = (el, target) => {
+    const start = performance.now();
+    const dur = 900 + Math.random()*400;
+    const from = 0;
+    const tick = (t) => {
+      const p = Math.min(1, (t - start)/dur);
+      const val = Math.floor(from + (target - from) * (1 - Math.cos(p * Math.PI)) / 2);
+      el.textContent = String(val);
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(({target, isIntersecting}) => {
+      if (!isIntersecting) return;
+      const n = parseInt(target.getAttribute('data-countto'), 10);
+      if (!Number.isFinite(n)) { io.unobserve(target); return; }
+      step(target, n);
+      io.unobserve(target);
+    });
+  }, {threshold:.4});
+  counters.forEach(el => io.observe(el));
+})();
