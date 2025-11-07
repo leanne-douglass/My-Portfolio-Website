@@ -142,7 +142,7 @@ const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
     btn.textContent = mode === 'dark' ? '☀️' : '🌙';
   };
 
-  apply(getSaved() || (mq.matches ? 'dark' : 'light'));
+  apply(getSaved() || 'dark');
 
   btn.addEventListener('click', () => {
     const next = current() === 'dark' ? 'light' : 'dark';
