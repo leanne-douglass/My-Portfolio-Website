@@ -3,37 +3,20 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfolio of Leanne Douglass, Front-End Developer creating accessible, performant, and elegant web experiences. Explore projects, case studies, and contact." />
-    <meta property="og:title" content="Leanne Douglass — Front-End Developer" />
-    <meta property="og:description" content="Projects, case studies, and contact." />
-    <meta property="og:image" content="portfolio.png" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Leanne Douglass | Developer Portfolio</title>
+    <meta name="description" content="Portfolio of Leanne Douglass, Front-End Developer focusing on accessible, performant, elegant web experiences." />
     <meta name="theme-color" content="#0f172a" />
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon.svg" />
-    <link rel="mask-icon" href="favicon.svg" color="#cbb894" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- WHY: prevent light flash; default dark unless user chose otherwise -->
     <script>try{document.documentElement.dataset.theme=localStorage.getItem('ld-theme')||'dark';}catch(e){document.documentElement.dataset.theme='dark';}</script>
     <link rel="stylesheet" href="style.css" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Leanne Douglass",
-        "jobTitle": "Front-End Developer",
-        "email": "mailto:250363056@aston.ac.uk",
-        "sameAs": ["https://uk.linkedin.com/in/leanne-douglass-92b0bb104"]
-      }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
   </head>
   <body class="home">
     <a class="skip-link" href="#main">Skip to main content</a>
 
-    <!-- Site Navigation -->
+    <!-- ===== Top Navigation (links to About + Blog) ===== -->
     <nav class="site-nav" aria-label="Primary">
       <div class="nav-container">
         <a href="index.html" class="brand" aria-label="Home">
@@ -41,9 +24,11 @@
           <span class="brand-name">Leanne Douglass</span>
           <span class="brand-tagline">Front-End Developer</span>
         </a>
+
         <button class="nav-toggle" aria-expanded="false" aria-controls="site-menu">Menu</button>
+
         <ul id="site-menu" class="nav-links">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="aboutme.html">About</a></li>
@@ -52,59 +37,49 @@
       </div>
     </nav>
 
-    <!-- Header / Hero -->
+    <!-- ===== Hero ===== -->
     <header role="banner" class="hero">
       <div class="hero-gradient" aria-hidden="true"></div>
       <div class="container hero-inner">
         <h1>Leanne Douglass</h1>
-        <h2>Front-End Developer & <span class="typing typing-in">Accessibility Advocate</span></h2>
-
+        <h2>Front-End Developer & <span class="typing typing-in">Animal Advocate</span></h2>
         <p class="hero-sub">
-          I build fast, accessible interfaces with a design eye and engineering discipline.
-          Focused on measurable outcomes and clean, maintainable code.
+          I am learning to build fast, accessible interfaces with a design eye and engineering discipline. I aim to be focused on measurable outcomes and clean, maintainable code.
         </p>
-
         <div class="hero-ctas">
           <a class="btn btn-primary" href="projects.html">Explore Projects</a>
           <a class="btn btn-secondary" href="contact.html">Hire Me</a>
           <a class="btn btn-ghost" href="resume.pdf" download>Download CV</a>
         </div>
 
-        <!-- Trust / KPIs -->
         <ul class="kpis" aria-label="Key stats">
-          <li><strong data-countto="8">0</strong><span>Projects shipped</span></li>
+          <li><strong data-countto="8">0</strong><span>Projects completed</span></li>
           <li><strong data-countto="3">0</strong><span>Tech stacks</span></li>
           <li><strong data-countto="95">0</strong><span>Accessibility score</span></li>
           <li><strong data-countto="1">0</strong><span>Open source repo</span></li>
         </ul>
 
-        <!-- Tech badges (SVG, no images) -->
         <div class="tech-badges" aria-label="Core technologies">
           <span class="badge" title="HTML5" aria-label="HTML5">
-            <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M1.5 0h21l-1.91 21.6L12 24l-8.59-2.4L1.5 0z" fill="#e44d26"/><path d="M12 22.1l6.94-1.94L20.6 2.2H12v19.9z" fill="#f16529"/></svg>
-            HTML
+            <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M1.5 0h21l-1.91 21.6L12 24l-8.59-2.4L1.5 0z" fill="#e44d26"/><path d="M12 22.1l6.94-1.94L20.6 2.2H12v19.9z" fill="#f16529"/></svg> HTML
           </span>
           <span class="badge" title="CSS3" aria-label="CSS3">
-            <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M1.5 0h21l-1.91 21.6L12 24l-8.59-2.4L1.5 0z" fill="#264de4"/><path d="M12 22.1l6.94-1.94L20.6 2.2H12v19.9z" fill="#2965f1"/></svg>
-            CSS
+            <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M1.5 0h21l-1.91 21.6L12 24l-8.59-2.4L1.5 0z" fill="#264de4"/><path d="M12 22.1l6.94-1.94L20.6 2.2H12v19.9z" fill="#2965f1"/></svg> CSS
           </span>
           <span class="badge" title="JavaScript" aria-label="JavaScript">
-            <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><rect width="24" height="24" rx="4" fill="#f7df1e"/></svg>
-            JavaScript
+            <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><rect width="24" height="24" rx="4" fill="#f7df1e"/></svg> JavaScript
           </span>
           <span class="badge" title="Java" aria-label="Java">
-            <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M12 2c3 4-3 4 0 8-6 0 6 0 0 6 6 0-6 0 0 6" fill="#e76f00"/></svg>
-            Java
+            <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M12 2c3 4-3 4 0 8-6 0 6 0 0 6 6 0-6 0 0 6" fill="#e76f00"/></svg> Java
           </span>
           <span class="badge" title="Accessibility" aria-label="Accessibility">
-            <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#10b981"/><path d="M4 8h16v2H4zM11 6h2v4h-2zM11 10h2v8h-2z" fill="#fff"/></svg>
-            a11y
+            <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#10b981"/><path d="M4 8h16v2H4zM11 6h2v4h-2zM11 10h2v8h-2z" fill="#fff"/></svg> a11y
           </span>
         </div>
       </div>
     </header>
 
-    <!-- Featured Projects -->
+    <!-- ===== Featured Projects ===== -->
     <main id="main" role="main">
       <section class="featured container">
         <h3 class="eyebrow">Selected Work</h3>
@@ -114,13 +89,12 @@
             <img src="portfolio.png" alt="Portfolio homepage screenshot" />
             <div class="card-body">
               <h3>Portfolio Website</h3>
-              <p>Semantic HTML + modern CSS with theme system, mobile nav, and a11y focus.</p>
-              <ul class="meta">
-                <li>Performance budget</li><li>Keyboard UX</li><li>Responsive</li>
-              </ul>
+              <p>Semantic HTML + modern CSS with theme system, mobile nav</p>
+              <ul class="meta"><li>Performance budget</li><li>Keyboard UX</li><li>Responsive</li></ul>
               <a class="btn btn-small" href="projects.html#portfolio">Case Study</a>
             </div>
           </article>
+
           <article class="card reveal-init" data-tag="java">
             <img src="gooserunmain1.png" alt="Goose Run main menu screenshot" />
             <div class="card-body">
@@ -130,11 +104,12 @@
               <a class="btn btn-small" href="projects.html#goose-run">Case Study</a>
             </div>
           </article>
+
           <article class="card reveal-init" data-tag="frontend,uiux">
             <img src="maggie1.png" alt="Dog daycare landing page screenshot" />
             <div class="card-body">
               <h3>Maggie’s Pawcations</h3>
-              <p>Bright, welcoming landing page with booking CTA and playful visuals.</p>
+              <p>Welcoming landing page with booking CTA and playful visuals.</p>
               <ul class="meta"><li>UI/UX</li><li>Forms</li><li>Accessibility</li></ul>
               <a class="btn btn-small" href="projects.html#pawcations">Case Study</a>
             </div>
@@ -147,12 +122,12 @@
         <h3 class="eyebrow">What People Say</h3>
         <div class="quotes">
           <blockquote>
-            “Leanne balances clean design with thoughtful engineering. A pleasure to collaborate with.”
+            “.”
             <cite>— Colleague, Aston University</cite>
           </blockquote>
           <blockquote>
-            “Attention to detail and accessibility-first thinking. Exactly what our users needed.”
-            <cite>— Volunteer project partner</cite>
+            “.”
+            <cite>— Project partner</cite>
           </blockquote>
         </div>
       </section>
@@ -160,16 +135,14 @@
       <!-- CTA -->
       <section class="cta container">
         <h2>Let’s build something users love</h2>
-        <p>Have a brief? I’m open to freelance and internships.</p>
+        <p>Have a brief? I’m open to freelance and entry positions.</p>
         <a class="btn btn-primary" href="contact.html">Start a Project</a>
       </section>
     </main>
 
     <footer role="contentinfo">
       <p>&copy; 2025 Leanne Douglass | Designed &amp; Built by Me</p>
-      <p>
-        <a href="mailto:250363056@aston.ac.uk" class="email-btn" aria-label="Email Leanne">250363056@aston.ac.uk</a>
-      </p>
+      <p><a href="mailto:250363056@aston.ac.uk" class="email-btn" aria-label="Email Leanne">250363056@aston.ac.uk</a></p>
     </footer>
 
     <script src="site.js"></script>
